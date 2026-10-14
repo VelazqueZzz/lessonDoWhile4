@@ -2,8 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import kotlin.random.Random
 
+
+
 fun main() {
-    val secret = Random.nextInt(1, 10)   // случайное число от 1 до 9
+    val secret = Random.nextInt(1, 10)
     val maxAttempts = 5
     var attempts = 0
 
@@ -16,14 +18,10 @@ fun main() {
 
         if (guess == secret) {
             println("Это была великолепная игра!")
-            break   // выходим из программы
+            return
         }
 
-        val remaining = maxAttempts - attempts
-        if (remaining > 0) {
-            println("Неверно. Осталось попыток: $remaining")
-        }
+        println("Неверно. Осталось попыток: ${maxAttempts - attempts}")
     }
-
     println("Было загадано число $secret")
 }
